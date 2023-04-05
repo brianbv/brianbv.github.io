@@ -1,20 +1,42 @@
-<html>
- <head>
-  <title>Stid Hill Location Notes</title>
+<html><head>
+  <title>Stid Hill Trail Support</title>
+  <style>
+   body { 
+	font-family:sans-serif;
+	padding:20pt;
+	text-align:center
+   }
+
+   .panel { 
+     display:inline-block;
+     border:#CCC 1pt solid;
+     border-radius:10pt;
+     padding:10pt;
+
+   }
+   
+  </style>
+ 
  </head>
 
  <body>
  <script>
   function submitLocation() {
-   let loc= navigator.geolocation.getCurrentPosition(showPosition);
-   let url = `https://docs.google.com/forms/d/e/1FAIpQLSeYvP2fhKDLPaDkg7V5ttNvAkcwz-CXxPOb-78X2qyUWHAjLQ/viewform?usp=pp_url&entry.1691216833=Issue&entry.605297345=${loc}`
-   document.location=url;
-  }
- </script
-  <h1>Submit Geolocation</h1>
-  
-  <button onclick="submitLocation">Submit My Location</button>
-  
- </body>
+   let loc= navigator.geolocation.getCurrentPosition(p=>{
+	let long=p.coords.latitude, lat=p.coords.longitude;
  
-</html>
+      let url = `https://docs.google.com/forms/d/e/1FAIpQLSeQ_Oozaiej5mNsOu7q0QoaxGknU525UTIN9xJ7FvDy04ZloQ/viewform?usp=pp_url&entry.93636794=Issue&entry.890156148=${long},${lat}`;
+      document.location=url;
+   
+   });
+ }
+ </script>
+
+  <h1>Stid Hill Trail Support</h1>
+  <div class="panel" >
+    <h3>Submit Location<h3>
+    <button onclick="submitLocation()">📌 Share My Location</button>
+  </div>
+ 
+ 
+</body></html>
