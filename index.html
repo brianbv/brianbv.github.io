@@ -1,0 +1,20 @@
+<html>
+ <head>
+  <title>Stid Hill Location Notes</title>
+ </head>
+
+ <body>
+ <script>
+  function submitLocation() {
+   let loc= navigator.geolocation.getCurrentPosition(showPosition);
+   let url = `https://docs.google.com/forms/d/e/1FAIpQLSeYvP2fhKDLPaDkg7V5ttNvAkcwz-CXxPOb-78X2qyUWHAjLQ/viewform?usp=pp_url&entry.1691216833=Issue&entry.605297345=${loc}`
+   document.location=url;
+  }
+ </script
+  <h1>Submit Geolocation</h1>
+  
+  <button onclick="submitLocation">Submit My Location</button>
+  
+ </body>
+ 
+</html>
